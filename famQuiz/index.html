@@ -1,0 +1,64 @@
+<html ng-app="quiz">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<title>Test je kennis over familie Waanders</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+
+	<!-- quiz container -->
+	<div class="quiz" ng-controller="QuizController">
+		<h1>Test je kennis over familie <span>Waanders</span></h1>
+		<div class="progress"> 
+			<div class="
+			{{ ($index === activeQuestion) ? 'on' : 'off' }}
+			{{ (myQuestion.questionState === 'answered') ? 'answered' : 'unanswered' }}
+			{{ (myQuestion.correctness === 'correct') ? 'correct' : 'incorrect' }}
+			" ng-repeat="myQuestion in myQuestions"></div>
+		</div><!-- progress --> 
+
+		<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
+			<h2>Welkom</h2>
+			<p>Klik op begin om je kennis over familie Waanders te testen.<br>Waar wacht je nog op?!</p>
+			<p class="btn" ng-click="activeQuestion = 0">Begin</p>
+		</div><!-- intro -->
+
+		<div class="question 
+			{{ $index === activeQuestion ? 'active' : 'inactive' }}
+			{{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered' }}
+			" ng-repeat="myQuestion in myQuestions">
+			<p class="txt">{{myQuestion.question}}</p>
+			<p class="ans" 
+				ng-class="{ 
+					image:Answer.image,
+					selected:isSelected($parent.$index, $index), 
+					correct:isCorrect($parent.$index, $index) 
+					}"
+				ng-style="{ 'background-image': 'url({{Answer.image}})' }"
+				ng-click="selectAnswer($parent.$index, $index)"
+				ng-repeat="Answer in myQuestions[$index].answers">
+				{{Answer.text}}
+			</p>
+
+			<div class="feedback">
+				<p ng-show="myQuestion.correctness === 'correct'">Yeah, dat is het <strong>juiste</strong> antwoord!</p>
+				<p ng-show="myQuestion.correctness === 'incorrect'">Oeps, dat is <strong>niet</strong> het goede antwoord</p>
+				<p>{{myQuestion.feedback}}</p>
+				<div class="btn" ng-click="selectContinue()">Volgende</div>
+			</div><!-- feedback --> 
+		</div><!-- question --> 
+		
+		<div class="results {{ (totalQuestions === activeQuestion) ? 'active': 'inactive' }}"> 
+				<h3>Resultaten</h3>
+				<p>Je hebt {{percentage}}% van de vragen goed beantwoord!<br>
+				Totale score: {{score}} van de {{totalQuestions}}</p>
+				<p>Gebruik onderstaande links om je vrienden uit te dagen</p>
+				<div class="share" ng-bind-html="createShareLinks(percentage)"></div>
+		</div><!-- results --> 
+	</div><!-- quiz container --> 
+		<!-- JS files --> 
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/quiz.js"></script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+[
+	{
+		"question" : "Waar heeft Thijs Julia ontmoet?",
+		"answers" : [
+			{ "id" 	: 0, "text" : "Breda" },
+			{ "id" 	: 1, "text" : "Düsseldorf" },
+			{ "id" 	: 2, "text" : "Halle" },
+			{ "id" 	: 3, "text" : "Tilburg" }
+		],
+		"correct" 	: 0
+	}, 
+	{
+		"question" : "Op wie is Lucie al ruim 40 jaar heimelijk verliefd?",
+		"answers" : [
+			{ "id" 	: 0, "image" : "images/karel.jpg" },
+			{ "id" 	: 1, "image" : "images/willem.jpg" },
+			{ "id" 	: 2, "image" : "images/1.jpg" },
+			{ "id" 	: 3, "image" : "images/2.jpg" }
+		],
+		"correct" 	: 1
+	}, 
+	{
+		"question" : "In welke kerk zijn Lucie en Willem getrouwd?",
+		"answers" : [
+			{ "id" 	: 0, "text" : "H. Caecilia Neede" },
+			{ "id" 	: 1, "text" : "H. Caecilia Rietmolen" },
+			{ "id" 	: 2, "text" : "H. Mattheus Neede" },
+			{ "id" 	: 3, "text" : "H. Mattheus Rietmolen" }
+		],
+		"correct" 	: 1
+	}, 
+	{
+		"question" : "In welke provincie is Lucie NIET geweest?",
+		"answers" : [
+			{ "id" 	: 0, "text" : "Zeeland" },
+			{ "id" 	: 1, "text" : "Drenthe" },
+			{ "id" 	: 2, "text" : "Flevoland" },
+			{ "id" 	: 3, "text" : "Groningen" }
+		],
+		"correct" 	: 2,
+		"feedback" 	: "Ongelooflijk maar waar, Flevoland moet nog worden ontdekt!"
+	}, 
+	{
+		"question" : "Welke kleur had de eerste auto van Lucie en Willem?",
+		"answers" : [
+			{ "id" 	: 0, "text" : "Oranje" },
+			{ "id" 	: 1, "text" : "Zwart" },
+			{ "id" 	: 2, "text" : "Wit" },
+			{ "id" 	: 3, "text" : "Zilver" }
+		],
+		"correct" 	: 0,
+		"feedback" 	: "Oranje? Ja echt waar! De eerste auto was een oranje Renault."
+	}, 
+	{
+		"question" : "De naam van ons laatste (gezamenlijke) huisdier is Bonnie",
+		"answers" : [
+			{ "id" 	: 0, "text" : "juist" },
+			{ "id" 	: 1, "text" : "onjuist" }
+		],
+		"correct" 	: 0
+	}
+] 
